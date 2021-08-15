@@ -1,3 +1,8 @@
+<?php
+require_once "classes/Users.php";
+$user = new User();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,18 +15,18 @@
 </head>
 <body>
     
-<div class="users">
+<div class="users mt-5">
     <div class="container">
-        <div class="row">
-            <div class="col-md-8 bg-dark">
-                <form action="">
-                <label for="name" class="col-sm-2 col-form-label">Name</label>
-                <input class="form-control" id="name" name="name" type="text">
-                <label for="email" class="col-sm-2 col-form-label">Email</label>
-                <input class="form-control" name="email" type="email">
-                <label for="pass" class="col-sm-2 col-form-label">Email</label>
-                <input id="pass" class="form-control" type="password">
-                <input type="submit" value="Recored" name="recored">
+        <div class="row justify-content-center">
+            <div class="col-md-8 bg-dark p-5 shadow-lg rounded">
+                <form action="" method="POST">
+                <label for="name" class="col-sm-2 col-form-label text-light">Name</label>
+                <input class="form-control" id="name" name="name" placeholder="Name" type="text">
+                <label for="email" class="col-sm-2 col-form-label text-light">Email</label>
+                <input class="form-control" name="email" placeholder="Email" type="email">
+                <label for="pass" class="col-sm-2 col-form-label text-light">Email</label>
+                <input id="pass" class="form-control" placeholder="Password" type="password">
+                <input type="submit" class="btn btn-info mt-5" value="Recored" name="recored">
                 </form>
             </div>
         </div>
