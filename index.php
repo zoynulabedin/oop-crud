@@ -1,6 +1,9 @@
 <?php
 require_once "classes/Users.php";
 $user = new User();
+if(isset($_POST['recored'])){
+   $user->insert_data($_POST);
+}
 ?>
 
 <!DOCTYPE html>
@@ -25,7 +28,7 @@ $user = new User();
                 <label for="email" class="col-sm-2 col-form-label text-light">Email</label>
                 <input class="form-control" name="email" placeholder="Email" type="email">
                 <label for="pass" class="col-sm-2 col-form-label text-light">Email</label>
-                <input id="pass" class="form-control" placeholder="Password" type="password">
+                <input id="pass" name="password" class="form-control" placeholder="Password" type="password">
                 <input type="submit" class="btn btn-info mt-5" value="Recored" name="recored">
                 </form>
             </div>
