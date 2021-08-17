@@ -49,24 +49,24 @@ if(isset($_POST['recored'])){
                             <th scope="col">#</th>
                             <th scope="col">Name</th>
                             <th scope="col">Email</th>
-                            <th scope="col"></th>
-                            <th scope="col"></th>
+                            <th scope="col">Action</th>
+
                         </tr>
                     </thead>
                     <tbody>
-                    <?php $row = mysqli_fetch_assoc($all_users);
-                    foreach( $row as $single){
-
+                    <?php
+                    $i = 1 ;
+                        while( $row = mysqli_fetch_assoc($all_users)):
                     ?>
                         <tr>
 
-                            <th scope="row">1</th>
-                            <td><?php echo $single['name'];?></td>
-                            <td><?php echo $single['email'];?></td>
-                            <td><a href="#">Edit</a></td>
-                            <td><a href="#">Delete</a></td>
+                            <th scope="row"><?php echo $i;?></th>
+                            <td><?php echo $row['name'];?></td>
+                            <td><?php echo $row['email'];?></td>
+                            <td><a href="edit.php?id=<?php echo $row['id'];?>">Edit</a> | <a href="delete.php?id=<?php echo $row['id'];?>">Delete</a></td>
+
                         </tr>
-                    <?php };?>
+                    <?php $i++; endwhile;?>
                     </tbody>
                 </table>
             </div>
